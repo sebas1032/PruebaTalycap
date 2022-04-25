@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="table-responsive">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <!--<th>Description</th>-->
+          <th>PageCount</th>
+          <!--<th>Excerpt </th>-->
+          <th>PublishDate</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of autoresylibros">
+          <td>{{detalle.id}}</td>
+          <td>{{detalle.title}} </td>
+          <!--<td>{{detalle.description}} </td>-->
+          <td>{{detalle.pageCount}} </td>
+          <!--<td>{{detalle.excerpt}} </td>-->
+          <td>{{detalle.publishDate}} </td>
+          <td>{{detalle.firstname}} </td>
+          <td>{{detalle.lastname}} </td>
+        </tr>      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="modal"
+     tabindex="-1"
+     role="dialog"
+     [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+  
+      <div class="modal-body">
+        <p>Todos los registros fueron cargados exitosamente</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success"
+                (click)="closePopup()">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
